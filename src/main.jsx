@@ -7,16 +7,23 @@ import {
 import "./index.css";
 import App from "./App";
 import Users from "./Users";
+import Form from "./Form";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
-  },
-  {
-    path: "/users",
-    element: <Users></Users>,
-    loader: () => fetch("http://localhost:5500/users"),
+    children: [
+      {
+        path: "/",
+        element: <Form></Form>,
+      },
+      {
+        path: "/users",
+        element: <Users></Users>,
+        loader: () => fetch("http://localhost:5500/users"),
+      },
+    ]
   },
 ]);
 

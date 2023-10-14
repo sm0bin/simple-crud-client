@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 
 const Users = () => {
-    const users = useLoaderData();
+    const initialUsers = useLoaderData();
+    const [users, setUsers] = useState(initialUsers);
 
     const handleDelete = (id) => {
         fetch(`http://localhost:5500/users/${id}`, {
@@ -11,6 +13,7 @@ const Users = () => {
             .then(data => {
                 if (data.deletedCount === 1) {
                     alert("Successfully deleted one document.");
+                    setUsers(initialUsers.filter(user => user._id !== id))
                 } else {
                     console.error("No documents matched the query. Deleted 0 documents.");
                 }
