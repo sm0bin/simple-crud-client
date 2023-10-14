@@ -8,6 +8,7 @@ import "./index.css";
 import App from "./App";
 import Users from "./Users";
 import Form from "./Form";
+import Update from "./Update";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,11 @@ const router = createBrowserRouter([
         path: "/users",
         element: <Users></Users>,
         loader: () => fetch("http://localhost:5500/users"),
+      },
+      {
+        path: "/update/:id",
+        element: <Update></Update>,
+        loader: ({ params }) => fetch(`http://localhost:5500/users/${params.id}`),
       },
     ]
   },

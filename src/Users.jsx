@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const Users = () => {
     const initialUsers = useLoaderData();
     const [users, setUsers] = useState(initialUsers);
+
 
     const handleDelete = (id) => {
         fetch(`http://localhost:5500/users/${id}`, {
@@ -28,6 +29,7 @@ const Users = () => {
                     <div className='card' key={user._id}>
                         <h3>{user.name}</h3>
                         <h3>{user.email}</h3>
+                        <Link to={`/update/${user._id}`}><button>Update</button></Link>
                         <button onClick={() => handleDelete(user._id)}>X</button>
                     </div>))
             }
