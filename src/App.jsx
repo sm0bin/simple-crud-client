@@ -11,7 +11,6 @@ function App() {
         <ul style={{ display: "flex", listStyle: "none", gap: "2rem", justifyContent: "center" }}>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/users">Users</Link></li>
-          <li><Link to="/">Idk</Link></li>
         </ul>
       </nav>
       {/* Name Email Form */}
