@@ -8,7 +8,7 @@ const Form = () => {
         const user = { name, email };
         console.log(user);
 
-        fetch("http://localhost:5500/users", {
+        fetch("https://simple-crud-server-i6r9xodwr-shehjad-mobins-projects.vercel.app/users", {
             method: "POST", // or 'PUT'
             headers: {
                 "Content-Type": "application/json",

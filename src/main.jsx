@@ -22,12 +22,12 @@ const router = createBrowserRouter([
       {
         path: "/users",
         element: <Users></Users>,
-        loader: () => fetch("http://localhost:5500/users"),
+        loader: () => fetch("https://simple-crud-server-i6r9xodwr-shehjad-mobins-projects.vercel.app/users"),
       },
       {
         path: "/update/:id",
         element: <Update></Update>,
-        loader: ({ params }) => fetch(`http://localhost:5500/users/${params.id}`),
+        loader: ({ params }) => fetch(`https://simple-crud-server-i6r9xodwr-shehjad-mobins-projects.vercel.app/users/${params.id}`),
       },
     ]
   },

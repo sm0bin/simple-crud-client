@@ -11,7 +11,7 @@ const Update = () => {
         const updatedUser = { name, email };
         console.log(updatedUser);
 
-        fetch(`http://localhost:5500/users/${loadedUser._id}`, {
+        fetch(`https://simple-crud-server-i6r9xodwr-shehjad-mobins-projects.vercel.app/users/${loadedUser._id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
